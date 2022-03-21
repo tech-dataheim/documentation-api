@@ -7,7 +7,7 @@ basePath: /v2
 info:
   description: |
     This is de documentation of CoDi API.
-    CoDi is a payment system that allows B2B, C2B, B2C, P2P payments in Mexico without paying any comission.
+    CoDi is a payment system that allows B2B, C2B, B2C, P2P payments in Mexico without paying any comission. Prueba.
 
 
     # Introduction
