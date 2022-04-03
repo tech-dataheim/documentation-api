@@ -9,37 +9,27 @@ info:
 
 
     # Introduction
-    This is the QPay API documentation that is intended to help customer of QPay understand and implement our payments API. Prueba.
-    EMMANUE HAL HOLA. de nuevo. Prueba.
+    This is the documentation intended to help Zulia's customers to implement our payments API. 
 
-    # Advantages of paying using Quickpay
-    CoDi is payment system extremely unique in the world and that is leading the innovation across the world with regards to payment methods.
-    Unlike most payment systems in the world, the Mexican Central Bank (BANXICO) created a centralized system called SPEI, which allows banks
-    to send money to one another instantly without waiting days for it to settle. In top of this system lies CoDi, an additional
-    layer of abstraction that allows final users to send money through QR codes, Near Field Communication (NFC) or by sending a push
-    notification to the payer user.
+    # Advantages of paying using Zulia
+    CoDi is a payments system extremely unique in the world that is leading the innovation across the world with regards to payment methods.
+    Unlike most payment systems, the Mexican Central Bank (BANXICO) created a centralized system called SPEI, which allows banks
+    to send money from one bank account to another in a matter of seconds. In top of this system lies CoDi, an additional
+    layer of abstraction that allows final users to send money through QR codes, Near Field Communication (NFC) or through a push
+    notification.
 
     # Our product
-    Our product intents to facilitate the access to CoDi to e-commerce businesses by creating an easy to use API to process
-    the payments between online merchants and their customers. Once the merchant is onboarded into the system, they will be
-    able to use our API which provides additional security features than the ones offered by BANXICO, it has simplyfied the
-    payment process to a few endpoints that allow the merchant send a payment and know the status of the transaction.
+    Our product intends to facilitate the access to CoDi. It allows any e-commerce business to accept payments via our 
+    easy to use API. This API is fully integrated and in compliance with BANXICO requirements, so it allows our final users
+    to smoothly integrate CoDi into their payment process.
 
+
+    # Functionality
+    Our service is designed to be as simple as possible. It only requires two API calls to manage all the payment process.
+    First, one API call is intended to send the payment request to the final user (via QR or push notification). And second, 
+    the another API purpose is to allow our merchants to check the payment status.
+    
     # Authentication
-    How Authentication works
-
-    We dont know yet
-
-    I made a small change, let see how it looks
-
-    another change
-
-    and another
-
-
-
-
-
 
     <SecurityDefinitions />
 
@@ -48,8 +38,8 @@ info:
   termsOfService: 'http://swagger.io/terms/'
   contact:
     name: API Support
-    email: tech@dataheim.com
-    url: https://github.com/zulia
+    email: tech@zulia.mx
+    url: https://github.com/tech-dataheim/zulia
   x-logo:
     url: 'https://raw.githubusercontent.com/tech-dataheim/files/bef3c1b14864b6912f3e1fa25167d6e2442b7997/logoZuliapng.png'
     altText: Petstore logo
@@ -61,7 +51,7 @@ externalDocs:
   url: 'https://github.com/Rebilly/generator-openapi-repo'
 tags:
   - name: payment
-    description: "This endpoints allows customers to send, receive and verify payments through a variety of methods : Push Notifition, QR Codes (in progress) and Near Field Communication (in progress)"
+    description: "This endpoints allows customers to send, receive and verify payments through a variety of methods : Push Notifition or QR Codes"
   - name: status
     description: Access to Petstore orders
   - name: transaction_model
@@ -120,7 +110,7 @@ paths:
           format: en-US
       - name: merchant_name
         in: query
-        description: Name of the merchant (i.e. Razón Social with which it was registered before Mexican SAT)
+        description: Name of the merchant (i.e. RFC or business name)
         required: true
         schema:
           type: string
@@ -143,7 +133,7 @@ paths:
       tags:
         - payment
       summary: Push Notification
-      description: Create and send a new payment message through push notification
+      description: Create and send a new payment message through push notification.
       operationId: sendPayment
       responses:
         '200':
